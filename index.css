@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+/* Header */
+.navbar {
+  position: fixed;
+  background-color: white;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px;
+}
+.mobileNav {
+  background-color: white;
+  width: 90px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: -100px;
+  text-align: center;
+}
+.openDrawer {
+  transform: translateX(-100px);
+  transition: all 0.3s;
+}
+.mobileNav a {
+  margin: 5px 0;
+}
+.mobileNav a:hover {
+  border-bottom: 1px solid black;
+}
+.mobileNav img {
+  width: 24px;
+  height: 24px;
+}
+.navbar .left {
+  font-size: 32px;
+  font-weight: bold;
+}
+.right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hamBurger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  margin: 3px 0;
+  border-radius: 5px;
+}
+.navbar .right {
+  width: 400px;
+}
+header nav img {
+  width: 24px;
+  height: 24px;
+}
+.navbar .right a:hover {
+  border-bottom: 1px solid black;
+}
+.project-grid {
+  margin-top: 115px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "eth eth alphabet"
+    "eth eth traveler"
+    "cube astro traveler"
+    "cup insta insta"
+    "cup insta insta"
+    "foam foam dimensional"
+    "foam foam dimensional";
+}
+#eth {
+  grid-area: eth;
+}
+#alphabet {
+  grid-area: alphabet;
+}
+#traveler {
+  grid-area: traveler;
+}
+#cube {
+  grid-area: cube;
+}
+#cup {
+  grid-area: cup;
+}
+#insta {
+  grid-area: insta;
+}
+#foam {
+  grid-area: foam;
+}
+#dimensional {
+  grid-area: dimensional;
+}
+.project {
+  position: relative;
+}
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project .overlay {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 20px;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.project.white {
+  color: white;
+}
+.project .overlay:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  cursor: pointer;
+}
+footer {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hamBurger {
+  display: none;
+}
+@media only screen and (max-width: 1100px) {
+  .navbar .left {
+    font-size: 25px;
+  }
+  .project-grid {
+    margin: 10px;
+    max-width: 100%;
+    grid-template-areas:
+      "eth eth"
+      "alphabet traveler"
+      "astro cube"
+      "insta insta"
+      "cup foam"
+      "dimensional dimensional";
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navbar .left {
+    font-size: 20px;
+  }
+  .navbar {
+    padding: 15px;
+  }
+  .hamBurger {
+    display: block;
+  }
+  .right {
+    display: none;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .project-grid {
+    margin: 10px;
+    max-width: 100%;
+    grid-template-areas:
+      "eth eth"
+      "alphabet alphabet"
+      "traveler traveler"
+      "astro cube"
+      "insta insta"
+      "cup cup"
+      "foam foam"
+      "dimensional dimensional";
+  }
+  .project .overlay {
+    font-size: 18px;
+  }
+}
+.animateBar1 {
+  animation: flipBar1 1s forwards;
+}
+.animateBar2 {
+  animation: fadeBar2 1s forwards;
+}
+.animateBar3 {
+  animation: flipBar3 1s forwards;
+}
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(40deg) translate(3px, 10px);
+  }
+}
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-40deg) translate(-2px, -7px);
+  }
+}
